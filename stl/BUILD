@@ -1,6 +1,7 @@
 cc_binary(
     name = 'stl',
-    srcs = ['vector.cc'],
+    srcs = ['map.cc',
+           ],
     deps = [],
     extra_cppflags = ['-std=c++11']
 )

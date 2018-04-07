@@ -39,6 +39,8 @@ int main(){
    fifth.pop_back();
   }
   std::cout << "sum fifth :" << sum << std::endl;
+  std::cout << "after fifth size: " << fifth.size() << std::endl;
+  std::cout << "after fifth capacity: " << fifth.capacity() << std::endl;
   //----------------------------------
   //改变操作
   first.assign(7, 100);
