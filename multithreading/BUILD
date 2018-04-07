@@ -1,6 +1,6 @@
 cc_binary(
     name = 'multithreading',
-    srcs = ['thread.cc',
+    srcs = ['atomic.cc',
            ],
     deps = ['#pthread'],
     extra_cppflags = ['-std=c++11']
