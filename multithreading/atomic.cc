@@ -10,7 +10,7 @@ void countlm(int id){
   while(!ready){
     std::this_thread::yield();
   }
-  for(volatile int i =0; i < 1000000; ++i){
+  for(volatile int i =0; i < 10; ++i){
     std::cout << "thread id: " << id << " get number: " << i << std::endl;
   }
   if(!winner.test_and_set()){
