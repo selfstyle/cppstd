@@ -13,7 +13,8 @@ int main () {
   std::shared_ptr<int> p4 (new int, std::default_delete<int>());
   std::shared_ptr<int> p5 (new int, [](int* p){
                                      delete p;}, std::allocator<int>());
-  std::shared_ptr<int> p6 (p5);
+  //std::shared_ptr<int> p6 (p5);
+  std::shared_ptr<int> p6 (new int);
   std::shared_ptr<int> p7 (std::move(p6));
   std::shared_ptr<int> p8 (std::unique_ptr<int>(new int));
   std::shared_ptr<C> obj (new C);

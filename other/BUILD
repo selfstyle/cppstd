@@ -1,6 +1,6 @@
 cc_binary(
     name = 'other',
-    srcs = ['chrono.cc',
+    srcs = ['utility.cc',
            ],
     deps = ['#pthread'],
     extra_cppflags = ['-std=c++11']
