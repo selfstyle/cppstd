@@ -41,6 +41,24 @@ void getptr6(std::shared_ptr<int>* p6){
   std::cout << "p use count: " << p.use_count() << std::endl;
 }
 
+std::shared_ptr<int> getptr7(){
+  std::shared_ptr<int> p(new int(5));
+  std::cout << "p use count: " << p.use_count() << std::endl;
+  return p;
+}
+
+std::shared_ptr<int>& getptr8(){
+  std::shared_ptr<int> p(new int(5));
+  std::cout << "p use count: " << p.use_count() << std::endl;
+  return p;
+}
+
+std::shared_ptr<int>* getptr9(){
+  std::shared_ptr<int> p(new int(5));
+  std::cout << "p use count: " << p.use_count() << std::endl;
+  return &p;
+}
+
 int main(){
   /*
   std::shared_ptr<int> p(new int(5));
@@ -51,6 +69,7 @@ int main(){
   std::cout << "p use count: " << p.use_count() << std::endl;
   */
 
+  /*
   std::shared_ptr<int> pt(new int(5));
   std::cout << "pt use count: " << pt.use_count() << std::endl;
   //getptr4(pt);
@@ -58,6 +77,24 @@ int main(){
   getptr6(&pt);
   std::cout << "pt use count: " << pt.use_count() << std::endl;
   std::cout << "pt value: " << *pt << std::endl;
+  */
+
+  std::shared_ptr<int> ptr;
+  std::cout << "ptr use count: " << ptr.use_count() << std::endl;
+  //ptr = getptr7();
+  //ptr = std::move(getptr7());
+  //ptr = getptr8(); // 这种情况下调用失败
+  //ptr = std::move(getptr8()); //这种情况下调用也失败
+  //std::cout << "ptr use count: " << ptr.use_count() << std::endl;
+  //std::cout << "ptr value: " << *ptr << std::endl;
+
+  /* // 错误的写法
+  std::shared_ptr<int>* ptr9;
+  ptr9 = getptr9();
+  std::cout << "ptr9 use count: " << ptr9->use_count() << std::endl;
+  std::cout << "ptr9 value: " << **ptr9 << std::endl;
+  */
+
 
   return 0;
 }
