@@ -7,6 +7,19 @@ struct C {
 
 int main () {
 
+  std::shared_ptr<int> p1(new int(5));
+  std::shared_ptr<int> p2(p1);
+  std::shared_ptr<int> p3 = p2;
+  std::cout << "p1: " << p1.use_count() << '\n';
+  std::cout << "p2: " << p2.use_count() << '\n';
+  std::cout << "p3: " << p3.use_count() << '\n';
+  p2.reset();
+  std::cout << "--------------" << std::endl;
+  std::cout << "p1: " << p1.use_count() << '\n';
+  std::cout << "p2: " << p2.use_count() << '\n';
+  std::cout << "p3: " << p3.use_count() << '\n';
+
+  /*
   std::shared_ptr<int> p1;
   std::shared_ptr<int> p2 (nullptr);
   std::shared_ptr<int> p3 (new int);
@@ -30,5 +43,6 @@ int main () {
   std::cout << "p7: " << p7.use_count() << '\n';
   std::cout << "p8: " << p8.use_count() << '\n';
   std::cout << "p9: " << p9.use_count() << '\n';
+  */
   return 0;
 }
