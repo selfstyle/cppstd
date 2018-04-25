@@ -1,6 +1,6 @@
 cc_binary(
     name = 'other',
-    srcs = ['memory.cc',
+    srcs = ['string.cc',
            ],
     deps = ['#pthread'],
     extra_cppflags = ['-std=c++11']
